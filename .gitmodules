@@ -1,0 +1,6 @@
+[submodule "mondraw"]
+	path = mondraw
+	url = https://github.com/333void/mondraw
+[submodule "musicplayer"]
+	path = musicplayer
+	url = https://github.com/333void/musicplayer
