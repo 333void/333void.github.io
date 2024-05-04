@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+/*
+ * SOUNDCLOUD
+*/
+
+#sc-box {
+  width: 100%;
+  max-width: 700px;
+  height: 325px;
+}
