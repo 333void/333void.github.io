@@ -16,48 +16,66 @@ function rootRate(root, rate) {
   }
 }
 
+function find() {
+  const balls = document.querySelectorAll("circle");
+  console.log(balls[0])
+  for (let i = 0; i < balls.length; i++) {
+    balls[i].addEventListener("mousedown", () => {
+      balls[i].setAttribute('fill', 'yellow');
+    })
+  }
+
+
+}
+
 function draw() {
-  const canvas = document.getElementById("canvas");
-  if (canvas.getContext) {
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const svg = document.getElementById("canvas");
+  svg.innerHTML = '';
 
-    let graphPadding = 40;
-    let graphWidth = canvas.width - (graphPadding * 2);
-    let graphRowHeight = 50;
+  let graphPadding = 40;
+  let graphWidth = svg.getAttribute('width') - (graphPadding * 2);
+  let graphRowHeight = 50;
 
-    for (let row = 1; row < harmonics + 1; row++) {
-      for (let point = 0; point < row; point++) {
-        if (point != 0 || row == 1) {
-          ctx.beginPath();
-          ctx.arc(graphPadding + ((graphWidth / (row)) * point), graphRowHeight * (row), 4, 0, 2 * Math.PI);
-          ctx.stroke();
-          ctx.fillStyle = "rgb(200 200 200)";
-          if (point != 0 && point != 1) {
-            // calculate if ratio can be simplified
-            for (let m = 2; m <= row / 2; m++) {
-              if (point % m == 0 && row % m == 0) {
-                ctx.fillStyle = "rgb(128 128 128 / 25%)";
-              }
-            }
+  for (let row = 1; row < harmonics + 1; row++) {
+    for (let point = 0; point < row; point++) {
+      if (point != 0 || row == 1) {
+        let dot = document.createElement('circle');
+        dot.setAttribute('id', point + '/' + row);
+        dot.setAttribute('cx', graphPadding + ((graphWidth / (row)) * point));
+        dot.setAttribute('cy', graphRowHeight * row);
+        dot.setAttribute('r', 10);
+        dot.setAttribute('fill', 'green');
+
+        // find if ratio can be simplified
+        for (let m = 2; m <= row / 2; m++) {
+          if (point % m == 0 && row % m == 0) {
+            dot.setAttribute('fill-opacity', '0%')
+            // SET BREAK
           }
-          ctx.fill();
-
-          ctx.font = "10px Arial";
-          ctx.fillText((point + row) + '/' + row, (graphPadding + ((graphWidth / (row)) * point)) + 4, (graphRowHeight * (row)) - 6);
         }
+
+        
+
+        svg.innerHTML += dot.outerHTML;
+
+        
+        
+        //ctx.font = "10px Arial";
+        //ctx.fillText((point + row) + '/' + row, (graphPadding + ((graphWidth / (row)) * point)) + 4, (graphRowHeight * (row)) - 6);
       }
     }
-    
-    
-    
-    /*ctx.beginPath();
-    ctx.moveTo(graphPadding + 5, 55)
-    ctx.bezierCurveTo(graphPadding, 70, graphPadding + graphWidth, 70, graphPadding + graphWidth, 50);
-    ctx.strokeStyle = "yellow";
-    ctx.stroke();*/
   }
+  find();
+  
+  
+  /*ctx.beginPath();
+  ctx.moveTo(graphPadding + 5, 55)
+  ctx.bezierCurveTo(graphPadding, 70, graphPadding + graphWidth, 70, graphPadding + graphWidth, 50);
+  ctx.strokeStyle = "yellow";
+  ctx.stroke();*/
 }
+
+// root * Math.pow(2, x / 12)
 
 function createTable(root) {
   const t = document.getElementById('table');
@@ -83,8 +101,10 @@ function createTable(root) {
 
 function load() {
   document.getElementById('rootfreq').addEventListener('input', (e) => {
-    createTable(document.getElementById('rootfreq').value)
+    let root = document.getElementById('rootfreq').value;
+    createTable(root);
     draw();
+    
   })
 }
 
