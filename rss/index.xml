@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-    <title>(title of your website)</title>
-    <link>(link to your website: https://(website name).com)</link>
-    <atom:link href="(link to xml file: https://(website name).com/index.xml)" rel="self" type="application/rss+xml" />
+    <title>333void</title>
+    <link>https://333void.github.io/</link>
+    <atom:link href="https://333void.github.io/rss/index.xml)" rel="self" type="application/rss+xml" />
     <description>(blog posts)</description>
     <language>en-us</language>
     <lastBuildDate>
-        (build date here - RFC 2822 - https://timestampgenerator.com/)
+        Wed, 16 Oct 2024 03:23:14 +0000
     </lastBuildDate>
-    <ttl>(timestamp here - https://timestampgenerator.com/)</ttl>
+    <ttl>1729048994</ttl>
 
 
-    <item> (add an item for every blog post)
-        <title> (blog post title) </title>
-        <link>(ex. https://(website name).com/blog/blogpost.html)</link>
+    <item>
+        <title>lil baby</title>
+        <link>https://333void.github.io//blog/blogpost.html</link>
         <description><![CDATA[
 
-            (copy and paste the html here)
+            <h1>lil baby</h1>
+            <p>platinum and rose</p>
 
         ]]></description>
-        <pubDate>(date blog published - RFC 2822 - https://timestampgenerator.com/)</pubDate>
-        <guid>(link back to the page, ex. https://(website name).com/blog/blogpost.html)</guid>
+        <pubDate>Wed, 16 Oct 2024 03:23:14 +0000</pubDate>
+        <guid>https://333void.github.io/</guid>
     </item>
 
 
-    
+
 </channel>
 </rss>
