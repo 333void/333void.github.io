@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>harmonics</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="ratios.css">
     <script src="src/table.js"></script>
   </head>
   <body>
-    <h1>harmonic ratios</h1>
+    <h1>harmonics</h1>
     <input id="rootfreq">
+    <label for="sameratetoggle">render duplicate ratios</label>
+    <input type="checkbox" id="sameratetoggle" name="sameratetoggle" checked>
     <table id="table"></table>
-    <svg id="canvas" width="1200" height="3000">
+    <svg id="canvas" width="1500" height="3000">
+      <g id="lines"></g>
+      <g id="balls"></g>
+      <g id="cool-lines"></g>
     </svg>
   </body>
 </html>
