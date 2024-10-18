@@ -3,22 +3,34 @@
 <channel>
     <title>333void</title>
     <link>https://333void.github.io/</link>
-    <atom:link href="https://333void.github.io/rss/index.xml)" rel="self" type="application/rss+xml" />
+    <atom:link href="https://333void.github.io/rss/index.xml" rel="self" type="application/rss+xml" />
     <description>(blog posts)</description>
     <language>en-us</language>
     <lastBuildDate>
-        Wed, 16 Oct 2024 03:23:14 +0000
+        Thu, 17 Oct 2024 18:13:51 +0000 
     </lastBuildDate>
-    <ttl>1729048994</ttl>
-
+    <ttl>1729188831</ttl>
 
     <item>
-        <title>lil baby</title>
+        <title>parking lot</title>
         <link>https://333void.github.io//blog/blogpost.html</link>
         <description><![CDATA[
 
-            <h1>lil baby</h1>
-            <p>platinum and rose</p>
+            <h1>parking lot</h1>
+            <p>by mineral</p>
+
+        ]]></description>
+        <pubDate>Thu, 17 Oct 2024 18:13:51 +0000 </pubDate>
+        <guid>https://333void.github.io/</guid>
+    </item>
+
+    <item>
+        <title>nineveh</title>
+        <link>https://333void.github.io//blog/blogpost.html</link>
+        <description><![CDATA[
+
+            <h1>nineveh</h1>
+            <p>by brandston</p>
 
         ]]></description>
         <pubDate>Wed, 16 Oct 2024 03:23:14 +0000</pubDate>
