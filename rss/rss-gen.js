@@ -18,6 +18,7 @@ function parseRSS(text) {
     console.log("error while parsing");
   } else {
     console.log(doc);
+    evalRSS(doc);
   }
 }
 
@@ -25,4 +26,19 @@ const file = new File(["heyyyyy"], "foo.txt", {
   type: "foo.png",
 });
 
-console.log(file)
+const buildDate = "//channel/lastBuildDate"
+const latestItem = "//channel/item[position() = 1]"
+
+function evalRSS(doc) {
+  const element = '//link';
+
+  const result = doc.evaluate(
+    latestItem,
+    doc,
+    null,
+    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+    null,
+  ).snapshotItem(0).textContent;
+  
+  console.log(result);
+}

@@ -10,6 +10,14 @@ td {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-top: 5px;
+}
+
 svg {
   border: 0.5px solid rgb(160 160 160);
 }
@@ -21,4 +29,17 @@ svg {
 
 text {
   fill: white;
+}
+
+#canvas {
+  display: block;
+  width: calc(100vw - 16px);
+}
+
+#plaintext {
+  color: white;
+  /*font-family: "Courier New", monospace;*/
+  background-color: black;
+  width: calc(100vw - 22px);
+  margin-bottom: 8px;
 }

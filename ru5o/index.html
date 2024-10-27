@@ -4,20 +4,61 @@
     <title>ru5o</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="notation.css">
-    <!-- LIBS -->
-    <script src="../src/333_library.js"></script>
-    <script src="src/scores/mary_had_a_little_lamb.js"></script>
     <!-- ENGINES -->
-    <script src="src/notationArtist.js"></script>
-    <script src="src/scoreEditor.js"></script>
+    <script type="module" src="src/notationArtist.js"></script>
   </head>
   <body>
     <h1>ru5o</h1>
-    <h2>soflegé music notation</h2>
-    <input type="text" id="plaintext">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" id="canvas"></svg>
+    <h2>digital & handwritten music notation</h2>
+    <label for="input">input</label>
+    <input type="text" name="input" id="plaintext">
+    <svg xmlns="http://www.w3.org/2000/svg" height="500" id="canvas"></svg>
+    <label for="input">output</label>
+    <input type="text" name="input" id="plaintext">
+    <br><br><br>
     <p>ru5o is a new music notation based on the work of Jean-Jacques Rousseau. It is made to be easy to write both digitally and by hand.</p>
+    <br>
+    <h2>writing plaintext ru5o</h2>
+    <p>edit the score properties by adding specifications wrapped in a bracket <i>"[]"</i> to the start of the line.</p>
     <table>
+      <caption>
+        introductory config
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">symbol</th>
+          <th scope="col">default</th>
+          <th scope="col">examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">key</th>
+          <td scope="col">k <i>(optional)</i></td>
+          <td scope="row">C, 1=C</td>
+          <td scope="row">Dm, Fb, \A, C#Phr, 1=G</td>
+        </tr>
+        <tr>
+          <th scope="col">time signature</th>
+          <td scope="col">m <i>(optional)</i></td>
+          <td scope="row">4/4</td>
+          <td scope="row">6/4, 13/16</td>
+        </tr>
+        <tr>
+          <th scope="col">tempo</th>
+          <td scope="row">q <i>(optional)</td>
+          <td scope="row">120</td>
+          <td scope="row">80, 200, 1/8=90</td>
+        </tr>
+        <tr>
+          <th scope="col">tuning</th>
+          <td scope="row">tn</td>
+          <td scope="row">12tet</td>
+          <td scope="row">6edo, 19mean</td>
+        </tr>
+    </table>
+    <!-- <table>
       <caption>
         notes
       </caption>
@@ -42,6 +83,10 @@
           <td>6</td>
           <td>7</td>
         </tr>
-    </table>
+    </table> 
+    inspirations
+    Chris Walshaw's ABC music notation system & Helmholtz's pitch notation system
+    Jean-Jacques Rousseau's work in <i>A d
+    -->
   </body>
 </html>

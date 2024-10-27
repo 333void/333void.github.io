@@ -1,3 +1,6 @@
+import parsePlaintext from "./plaintextParser.js";
+import { bSVGElement } from "../../utils/333_library.js";
+
 function draw(score) {
   const canvas = document.getElementById('canvas');
   let xPointer = 50, yPointer = 50, rootOctave = 0, xSpacing = 7, biggestWidth = 0; xTra = 0;
@@ -50,6 +53,9 @@ function draw(score) {
 
 
 window.addEventListener('load', (e) => {
-  draw(score);
+  let pT = document.getElementById('plaintext')
+
+  pT.addEventListener('input', parsePlaintext(pT.value));
+  
 
 })

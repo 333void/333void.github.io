@@ -4,12 +4,25 @@
     <title>333void</title>
     <link>https://333void.github.io/</link>
     <atom:link href="https://333void.github.io/rss/index.xml" rel="self" type="application/rss+xml" />
-    <description>(blog posts)</description>
+    <description>rss test</description>
     <language>en-us</language>
     <lastBuildDate>
-        Thu, 17 Oct 2024 18:13:51 +0000 
+        Sun, 27 Oct 2024 03:17:52 +0000
     </lastBuildDate>
-    <ttl>1729188831</ttl>
+    <ttl>1729999072</ttl>
+
+    <item>
+        <title>xav - ascend</title>
+        <link>https://333void.github.io//blog/blogpost.html</link>
+        <description><![CDATA[
+
+            <h1>ascend</h1>
+            <p>by xaviersobased</p>
+
+        ]]></description>
+        <pubDate>Sun, 27 Oct 2024 03:17:52 +0000</pubDate>
+        <guid>https://333void.github.io/</guid>
+    </item>
 
     <item>
         <title>parking lot</title>
@@ -20,7 +33,7 @@
             <p>by mineral</p>
 
         ]]></description>
-        <pubDate>Thu, 17 Oct 2024 18:13:51 +0000 </pubDate>
+        <pubDate>Thu, 17 Oct 2024 18:13:51 +0000</pubDate>
         <guid>https://333void.github.io/</guid>
     </item>
 
@@ -36,8 +49,6 @@
         <pubDate>Wed, 16 Oct 2024 03:23:14 +0000</pubDate>
         <guid>https://333void.github.io/</guid>
     </item>
-
-
 
 </channel>
 </rss>
