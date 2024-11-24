@@ -2,7 +2,12 @@
   --key-size: 25px;
 }
 
-
+@media only screen and (orientation: portrait) {
+  /* For phones: */
+  #con-text {
+    margin: auto;
+  }
+}
 
 svg {
   border: 0.5px solid rgb(160 160 160);
@@ -21,8 +26,8 @@ td {
   max-width: 425px;
 }
 
+
 #text {
-  margin: auto;
   width: 100%;
   background-color: black;
   border: 1px solid white;
