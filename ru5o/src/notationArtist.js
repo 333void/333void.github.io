@@ -23,7 +23,7 @@ function draw(score) {
         y: yPointer - andOct,
       },
       innerHTML: note.pitch.step,
-    }).fab());
+    }).set());
 
     // change in xPointer (AFFECTS NEXT NOTE IN LOOP)
     width = document.getElementById(id).getBBox().width;

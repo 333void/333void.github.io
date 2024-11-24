@@ -1,0 +1,94 @@
+:root {
+  --key-size: 25px;
+}
+
+
+
+svg {
+  border: 0.5px solid rgb(160 160 160);
+  border-spacing: 0px;
+}
+
+th,
+td {
+  border: 0.5px solid rgb(160 160 160);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+#con-text {
+  margin: auto;
+  width: 50%;
+}
+
+#text {
+  margin: auto;
+  width: 100%;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-family: sans-serif;
+  /* font-family: 'Times New Roman', Times, serif; */
+}
+
+#con-keyboard {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  margin-bottom: 4px;
+}
+
+#row-0 {
+  text-align: right;
+}
+
+.key {
+  width: var(--key-size);
+  height: var(--key-size);
+  text-align: center;
+  text-wrap: nowrap;
+  overflow: hidden;
+}
+
+.key.ghost {
+  border: 1px solid #404040;
+  border-radius: 4px;
+  background-color: dimgray;
+  color: dimgray;
+}
+
+#clear {
+  width: initial;
+}
+
+#tab {
+  width: calc(var(--key-size) * 1.5)
+}
+
+#caps-lock {
+  width: calc(var(--key-size) * 1.8)
+}
+
+#left-shift {
+  width: calc(var(--key-size) * 2.5)
+}
+
+#backslash {
+  width: calc(var(--key-size) * 1.5)
+}
+
+#enter {
+  width: calc(var(--key-size) * 2.35)
+}
+
+#right-shift {
+  width: calc(var(--key-size) * 2.8)
+}
