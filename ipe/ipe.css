@@ -4,6 +4,10 @@
 
 @media only screen and (orientation: portrait) {
   /* For phones: */
+  :root {
+    --key-size: 50px;
+  }
+
   #con-text {
     margin: auto;
   }
