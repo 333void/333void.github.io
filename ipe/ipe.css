@@ -1,5 +1,6 @@
 :root {
-  --key-size: 40;
+  --font-size: 50;
+  --key-size: 100;
   --spacing: calc(var(--key-size) / 10);
 }
 
@@ -29,6 +30,7 @@ html {
   border-radius: 5px;
   color: white;
   font-family: 'Times New Roman', Times, serif;
+  font-size: calc(var(--font-size) * 1.5 * 1px);
 }
 
 .row {
@@ -44,18 +46,11 @@ html {
 
 .key {
   flex: 1 1 0;
-  
   height: calc(var(--key-size) * 1px);
   text-align: center;
   text-wrap: nowrap;
   overflow: hidden;
-}
-
-.key.ghost {
-  border: 1px solid #404040;
-  border-radius: 4px;
-  background-color: dimgray;
-  color: dimgray;
+  font-size: calc(var(--font-size) * 1px);
 }
 
 #clear {

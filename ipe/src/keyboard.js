@@ -20,6 +20,7 @@ function insertAtCursor(myField, myValue) {
 }
 
 window.onload = () => {
+  // make keys functional
   for (const key of document.querySelectorAll(".key.text")) {
     const text = document.getElementById('text');
     if (key.id == 'clear') {
@@ -50,4 +51,8 @@ window.onload = () => {
       key.textContent = key.getAttribute(keyCase);
     }
   })
+  // clear button
+  document.getElementById('clear').addEventListener('click', () => {document.getElementById('text').value = '';})
+  // for mobile
+  document.getElementById('text').addEventListener('focus', (e) => {e.preventDefault();})
 }
