@@ -1,6 +1,6 @@
 :root {
   --u1: 1;
-  --font-size: calc(1 * 4vw);
+  --font-size: calc(1 * 3vw);
   --key-size: 6vw;
   --spacing: calc(var(--key-size) / 10);
 }
@@ -9,7 +9,7 @@
   /* For desktop: */
   :root {
     --u1: 1px;
-    --font-size: calc(4 * 7.75);
+    --font-size: calc(3 * 7.75);
     --key-size: calc(6 * 7.75);
   }  
 }
@@ -60,29 +60,29 @@ html {
 }
 
 #clear {
-  flex: 0.05 1 auto;
+  flex: 0.1 1 0;
 }
 
 #tab {
-  flex: 1.5 1 auto;
+  flex: 1.5 1 0;
 }
 
 #backslash {
-  flex: 1.5 1 auto;
+  flex: 1.5 1 0;
 }
 
 #caps-lock {
-  flex: 1.75 1 auto;
+  flex: 1.75 1 0;
 }
 
 #enter {
-  flex: 2.25 1 auto;
+  flex: 2.25 1 0;
 }
 
 #left-shift {
-  flex: 2.25 1 auto;
+  flex: 2.25 1 0;
 }
 
 #right-shift {
-  flex: 2.75 1 auto;
+  flex: 2.75 1 0;
 }
