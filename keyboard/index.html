@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="ipe.css">
+    <script type="module" src="src/keyboard.js"></script>
+  </head>
+  <body>
+    <h1>keyboard</h1>
+    <label for="kb-select">layout:</label>
+    <select name="kb-select" id="kb-select">
+      <option value="querty"id="querty" selected>querty</option>
+      <option value="dvorak">dvorak</option>
+      <option value="ipe"></option>
+    </select>
+    <div id="con-device">
+      <div id="con-text">
+        <textarea id="text" spellcheck="false" rows="8"></textarea></textarea>
+      </div>
+      <div id="con-keyboard">
+        <div id="keyboard">
+          <div id="row-0" class="row">
+            <button class="key" id="clear">clear</button>
+          </div>
+          <div id="row-1" class="row">
+            <button id="tab" class="key" disabled></button>
+            <button id="key-1-2" class="key text" lowerCase="q" upperCase="Q">q</button>
+            <button id="key-1-3" class="key text" lowerCase="w" upperCase="W">w</button>
+            <button id="key-1-4" class="key text" lowerCase="e" upperCase="E">e</button>
+            <button id="key-1-5" class="key text" lowerCase="r" upperCase="R">r</button>
+            <button id="key-1-6" class="key text" lowerCase="t" upperCase="T">t</button>
+            <button id="key-1-7" class="key text" lowerCase="y" upperCase="Y">y</button>
+            <button id="key-1-8" class="key text" lowerCase="u" upperCase="U">u</button>
+            <button id="key-1-9" class="key text" lowerCase="i" upperCase="I">i</button>
+            <button id="key-1-10" class="key text" lowerCase="o" upperCase="O">o</button>
+            <button id="key-1-11" class="key text" lowerCase="p" upperCase="P">p</button>
+            <button id="key-1-12" class="key text" disabled></button>
+            <button id="key-1-13" class="key text" disabled></button>
+            <button id="backslash" class="key text" disabled></button>
+          </div>
+          <div id="row-2" class="row">
+            <button id="caps-lock" class="key" disabled></button>
+            <button id="key-2-2" class="key text" lowerCase="a" upperCase="A">a</button>
+            <button id="key-2-3" class="key text" lowerCase="s" upperCase="S">s</button>
+            <button id="key-2-4" class="key text" lowerCase="d" upperCase="D">d</button>
+            <button id="key-2-5" class="key text" lowerCase="f" upperCase="F">f</button>
+            <button id="key-2-6" class="key text" lowerCase="g" upperCase="G">g</button>
+            <button id="key-2-7" class="key text" lowerCase="h" upperCase="H">h</button>
+            <button id="key-2-8" class="key text" lowerCase="j" upperCase="J">j</button>
+            <button id="key-2-9" class="key text" lowerCase="k" upperCase="K">k</button>
+            <button id="key-2-10" class="key text" lowerCase="l" upperCase="L">l</button>
+            <button id="key-2-11" class="key text" disabled></button>
+            <button id="key-2-12" class="key text" disabled></button>
+            <button id="enter" class="key" disabled></button>
+          </div>
+          <div id="row-3" class="row">
+            <button id="left-shift" class="key" on="false">shift</button>
+            <button id="key-3-2" class="key text" lowerCase="z" upperCase="Z">z</button>
+            <button id="key-3-3" class="key text" lowerCase="x" upperCase="X">x</button>
+            <button id="key-3-4" class="key text" lowerCase="c" upperCase="C">c</button>
+            <button id="key-3-5" class="key text" lowerCase="v" upperCase="V">v</button>
+            <button id="key-3-6" class="key text" lowerCase="b" upperCase="B">b</button>
+            <button id="key-3-7" class="key text" lowerCase="n" upperCase="N">n</button>
+            <button id="key-3-8" class="key text" lowerCase="m" upperCase="M">m</button>
+            <button id="key-3-9" class="key text" disabled></button>
+            <button id="key-3-10" class="key text" disabled></button>
+            <button id="key-3-11" class="key text" disabled></button>
+            <button id="right-shift" class="key" disabled></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
