@@ -3,7 +3,9 @@ import { layouts } from "./layouts.data.js";
 const supSChars = {
   a: '\u1D43',
   e: '\u1D49',
-  i: '\u2071'
+  i: '\u2071',
+  o: '\u1D52',
+  u: '\u1D58'
 }
 
 function insertAtCursor(myField, myValue, erase = 0) {
