@@ -1,6 +1,6 @@
 :root {
   --u1: 1;
-  --font-size: 3vw;
+  --font-size: 3.5vw;
   --key-size: 6vw;
   --spacing: calc(var(--key-size) / 10);
 }
@@ -9,7 +9,7 @@
   /* For desktop: */
   :root {
     --u1: 1px;
-    --font-size: calc(3 * 7.7);
+    --font-size: calc(3.5 * 7.7);
     --key-size: calc(6 * 7.7);
   }  
 }
@@ -34,6 +34,7 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 
 #con-text {
@@ -92,10 +93,12 @@ label {
   flex: 2.25;
 }
 
-#left-shift {
+/* left shift */
+#key-3-1 {
   flex: 2.25 1 0;
 }
 
-#right-shift {
+/* right shift */
+#key-3-12 {
   flex: 2.75;
 }

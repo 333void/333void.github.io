@@ -1,6 +1,8 @@
 export const scoreDefaults = {
-  // musical key
+  // musical key / root note for soflege
   k: 'C',
+  //
+  rt: '1',
   // time signature
   m: '4/4',
   // tempo

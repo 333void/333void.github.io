@@ -5,14 +5,15 @@
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="notation.css">
     <!-- ENGINES -->
-    <script type="module" src="src/notationArtist.js"></script>
+    <script type="module" src="src/main.js"></script>
   </head>
   <body>
     <h1>ru5o</h1>
     <h2>digital & handwritten music notation</h2>
     <label for="input">input</label>
     <input type="text" name="input" id="plaintext">
-    <svg xmlns="http://www.w3.org/2000/svg" height="500" id="canvas"></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" height="500" id="canvas">
+    </svg>
     <label for="input">output</label>
     <input type="text" name="input" id="plaintext">
     <br><br><br>
@@ -22,7 +23,7 @@
     <p>edit the score properties by adding specifications wrapped in a bracket <i>"[]"</i> to the start of the line.</p>
     <table>
       <caption>
-        introductory config
+        config parameters
       </caption>
       <thead>
         <tr>
@@ -36,26 +37,38 @@
         <tr>
           <th scope="col">key</th>
           <td scope="col">k <i>(optional)</i></td>
-          <td scope="row">C, 1=C</td>
-          <td scope="row">Dm, Fb, \A, C#Phr, 1=G</td>
+          <td scope="row">C</td>
+          <td scope="row">Dm, F, C#Phr</td>
+        </tr>
+        <tr>
+          <th scope="col">root note <i>(soflège)</i></th>
+          <td scope="col">numeral</td>
+          <td scope="row">1=C<br><i>(A440)</i></td>
+          <td scope="row">6=F, 3=/A, 1=200hz </td>
+        </tr>
+        <tr>
+          <th scope="col">mode</th>
+          <td scope="col">m</td>
+          <td scope="row">Major</td>
+          <td scope="row">Minor, Lydian, Dorian</td>
         </tr>
         <tr>
           <th scope="col">time signature</th>
-          <td scope="col">m <i>(optional)</i></td>
+          <td scope="col">t <i>(optional)</i></td>
           <td scope="row">4/4</td>
           <td scope="row">6/4, 13/16</td>
         </tr>
         <tr>
           <th scope="col">tempo</th>
-          <td scope="row">q <i>(optional)</td>
+          <td scope="row">q <i>(optional)</i><br>fraction</td>
           <td scope="row">120</td>
           <td scope="row">80, 200, 1/8=90</td>
         </tr>
         <tr>
           <th scope="col">tuning</th>
           <td scope="row">tn</td>
-          <td scope="row">12tet</td>
-          <td scope="row">6edo, 19mean</td>
+          <td scope="row">12tet<br></td>
+          <td scope="row">6edo, 19mean, just</td>
         </tr>
     </table>
     <!-- <table>

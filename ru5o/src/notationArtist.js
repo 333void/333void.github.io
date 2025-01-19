@@ -1,7 +1,6 @@
-import parsePlaintext from "./plaintextParser.js";
-import { bSVGElement } from "../../utils/333_library.js";
+import { bSVGElement } from "../../utils/bNodes.js";
 
-function draw(score) {
+export default function notate(score) {
   const canvas = document.getElementById('canvas');
   let xPointer = 50, yPointer = 50, rootOctave = 0, xSpacing = 7, biggestWidth = 0; xTra = 0;
 
@@ -43,19 +42,5 @@ function draw(score) {
         xPointer += xSpacing + biggestWidth;
       }
     }
-
-
-
-
   }
 }
-
-
-
-window.addEventListener('load', (e) => {
-  let pT = document.getElementById('plaintext')
-
-  pT.addEventListener('input', parsePlaintext(pT.value));
-  
-
-})
