@@ -1,7 +1,6 @@
 :root {
   --u1: 1;
-  --font-size: 2.5vw;
-  --font-size: 2.5vw;
+  --font-size: 5.5vw;
   --key-size: 6vw;
   --spacing: calc(var(--key-size) / 10);
 }
@@ -10,7 +9,7 @@
   /* For desktop: */
   :root {
     --u1: 1px;
-    --font-size: calc(2.5 * 7.7);
+    --font-size: calc(5.5 * 7.7);
     --key-size: calc(6 * 7.7);
   }  
 }
@@ -66,7 +65,7 @@ label {
 }
 
 .key {
-  flex: 1 1 0;
+  flex: 1 0 0;
   height: calc(var(--key-size) * var(--u1));
   text-align: center;
   text-wrap: nowrap;
@@ -77,31 +76,31 @@ label {
 }
 
 #clear {
-  flex: 0.1;
+  flex: 0.1 0 0;
 }
 
 #tab {
-  flex: 1.5;
+  flex: 1.5 0 0;
 }
 
 #backslash {
-  flex: 1.5;
+  flex: 1.5 0 0;
 }
 
 #caps-lock {
-  flex: 1.75;
+  flex: 1.75 0 0;
 }
 
 #enter {
-  flex: 2.25;
+  flex: 2.25 0 0;
 }
 
 /* left shift */
 #key-3-1 {
-  flex: 2.25 1 0;
+  flex: 2.25 0 0;
 }
 
 /* right shift */
 #key-3-12 {
-  flex: 2.75;
+  flex: 2.75 0 0;
 }
