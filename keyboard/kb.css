@@ -70,9 +70,6 @@ label {
   text-align: center;
   text-wrap: nowrap;
   overflow: hidden;
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
   font-size: calc(var(--font-size) * var(--u1));
 }
 
