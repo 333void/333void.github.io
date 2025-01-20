@@ -70,6 +70,7 @@ label {
   text-align: center;
   text-wrap: nowrap;
   overflow: hidden;
+  padding-left: 100px;
   font-size: calc(var(--font-size) * var(--u1));
 }
 
