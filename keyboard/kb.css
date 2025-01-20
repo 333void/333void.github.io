@@ -71,6 +71,7 @@ label {
   text-wrap: nowrap;
   overflow: hidden;
   appearance: none;
+  padding: 0px;
   font-size: calc(var(--font-size) * var(--u1));
 }
 
