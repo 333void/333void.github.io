@@ -1,6 +1,6 @@
-jo:root {
+:root {
   --u1: 1;
-  --font-size: 5.5vw;
+  --font-size: 3.5vw;
   --key-size: 6vw;
   --spacing: calc(var(--key-size) / 10);
 }
@@ -9,7 +9,7 @@ jo:root {
   /* For desktop: */
   :root {
     --u1: 1px;
-    --font-size: calc(5.5 * 7.7);
+    --font-size: calc(3.5 * 7.7);
     --key-size: calc(6 * 7.7);
   }  
 }
@@ -25,7 +25,6 @@ label {
 
 #kb-select {
   margin-bottom: calc(var(--spacing) * var(--u1));
-  
   font-family: 'Tahoma', 'sans-serif';
   font-size: calc(var(--font-size) * var(--u1) * 0.75);
 }
@@ -34,23 +33,28 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  height: calc(100vh - 123px);
 }
 
 #con-text {
   display: flex;
+  overflow: hidden;
   margin-bottom: calc(var(--spacing) * var(--u1));
 }
 
 #text {
+  overflow: scroll;
   width: 100%;
   background-color: black;
   border: 1px solid white;
   border-radius: 5px;
-
   color: white;
   font-family: 'Times New Roman', Times, serif;
   font-size: calc(var(--font-size) * var(--u1) * 1.5);
+}
+
+#con-keyboard {
+  margin-bottom: auto;
 }
 
 .row {
@@ -67,13 +71,24 @@ label {
 .key {
   flex: 1 0 0;
   height: calc(var(--key-size) * var(--u1));
+  /*border-radius: 4px;
+  border: 1px solid #8f8f9d; */
+  padding: 0px;
   text-align: center;
   text-wrap: nowrap;
   overflow: hidden;
-  appearance: button;
-  padding: 0px;
+  /*-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+
   font-size: calc(var(--font-size) * var(--u1));
+
 }
+
+.key:disabled {
+  /*border-color:   #6e6e70 */
+}
+
 
 #clear {
   flex: 0.1 0 0;
