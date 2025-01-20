@@ -1,6 +1,6 @@
 :root {
   --u1: 1;
-  --font-size: 3.5vw;
+  --font-size: 2.5vw;
   --key-size: 6vw;
   --spacing: calc(var(--key-size) / 10);
 }
@@ -9,7 +9,7 @@
   /* For desktop: */
   :root {
     --u1: 1px;
-    --font-size: calc(3.5 * 7.7);
+    --font-size: calc(2.5 * 7.7);
     --key-size: calc(6 * 7.7);
   }  
 }
@@ -70,7 +70,6 @@ label {
   text-align: center;
   text-wrap: nowrap;
   overflow: hidden;
-  padding-left: 100px;
   font-size: calc(var(--font-size) * var(--u1));
 }
 
