@@ -1,6 +1,7 @@
 :root {
   --u1: 1;
   --font-size: 2.5vw;
+  --font-size: 2.5vw;
   --key-size: 6vw;
   --spacing: calc(var(--key-size) / 10);
 }
