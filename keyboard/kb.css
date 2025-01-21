@@ -80,7 +80,7 @@ label {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
+  touch-action: manipulation;
   font-size: calc(var(--font-size) * var(--u1));
 
 }
