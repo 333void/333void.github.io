@@ -71,22 +71,22 @@ label {
 .key {
   flex: 1 0 0;
   height: calc(var(--key-size) * var(--u1));
-  /*border-radius: 4px;
-  border: 1px solid #8f8f9d; */
+  border-radius: 4px;
+  border: 1px solid #8f8f9d;
   padding: 0px;
   text-align: center;
   text-wrap: nowrap;
   overflow: hidden;
-  /*-webkit-appearance: none;
+  -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none; */
+  appearance: none;
 
   font-size: calc(var(--font-size) * var(--u1));
 
 }
 
 .key:disabled {
-  /*border-color:   #6e6e70 */
+  border-color: #6e6e70;
 }
 
 
