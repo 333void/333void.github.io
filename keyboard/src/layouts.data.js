@@ -136,7 +136,7 @@ export const layouts = {
       ['m', 'M'],
       ['\u0327'],
       ['\u0307'],
-      'disabled',
+      ['\u030A']
       ['r. alt'],
     ]
   ]
