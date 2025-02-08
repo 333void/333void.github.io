@@ -1,8 +1,15 @@
 body {
   background-color: black;
+  color: white;
 }
 
 #text {
   text-wrap: wrap;
-  font-size: 10em;
+  font-size: 1em;
+}
+
+textarea {
+  min-height: 17px;
+  margin-top: 0px;
+  margin-bottom: -5px;
 }

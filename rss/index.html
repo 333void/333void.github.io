@@ -2,12 +2,28 @@
 <html>
   <head>
     <link rel="stylesheet" href="index.css">
-    <script src="rss-gen.js"></script>
+    <script type="module" src="rssgen.js"></script>
   </head>
   <body>
     <form id="form">
-      <input name="text" id="text" type="text" autofocus>
-      <input type="submit" id="submit" value="download RSS">
+      <h3>title</h3>
+        <input id="title" name="title" type="text">
+      <h3>description</h3>
+        <div id="desc-con">
+          <label id="e1-label" for="e1">&lt
+            <select id="e1-tag">
+              <option selected>p</option>
+              <option>h1</option>
+            </select>
+          &gt</label>
+          <textarea id="e1" name="e1" rows="1"></textarea>
+          <br>
+        </div>
+      <br>
+      <input type="button" id="add" value="add item [+]">
+      <input type="button" id="subtract" value="remove lastest item [-]" disabled>
+      <br>
+      <input type="button" id="download" value="download RSS">
     </form>
   </body>
 </html>

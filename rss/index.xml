@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-    <title>333void</title>
+    <title>333void's cool blog</title>
     <link>https://333void.github.io/</link>
     <atom:link href="https://333void.github.io/rss/index.xml" rel="self" type="application/rss+xml" />
     <description>rss test</description>
@@ -9,11 +9,10 @@
     <lastBuildDate>
         Sun, 27 Oct 2024 03:17:52 +0000
     </lastBuildDate>
-    <ttl>1729999072</ttl>
 
     <item>
         <title>xav - ascend</title>
-        <link>https://333void.github.io//blog/blogpost.html</link>
+        <link>https://333void.github.io/blog/blogpost.html</link>
         <description><![CDATA[
 
             <h1>ascend</h1>
@@ -21,12 +20,12 @@
 
         ]]></description>
         <pubDate>Sun, 27 Oct 2024 03:17:52 +0000</pubDate>
-        <guid>https://333void.github.io/</guid>
+        <guid>https://333void.github.io/blog/2024/10/27/001</guid>
     </item>
 
     <item>
         <title>parking lot</title>
-        <link>https://333void.github.io//blog/blogpost.html</link>
+        <link>https://333void.github.io/blog/blogpost.html</link>
         <description><![CDATA[
 
             <h1>parking lot</h1>
@@ -39,7 +38,7 @@
 
     <item>
         <title>nineveh</title>
-        <link>https://333void.github.io//blog/blogpost.html</link>
+        <link>https://333void.github.io/blog/blogpost.html</link>
         <description><![CDATA[
 
             <h1>nineveh</h1>
