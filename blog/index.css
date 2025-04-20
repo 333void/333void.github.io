@@ -1,0 +1,44 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+#blog-con {
+  display: flex;
+  flex-direction: column; 
+}
+
+#blog {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  border: 1px solid white;
+  padding: 20px;
+}
+
+#title {
+  text-align: center;
+}
+
+.blogpost {
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
+
+.blogpost-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.blogpost-title {
+  margin: 0px;
+  text-decoration-line: underline;
+}
+
+.blogpost-date {
+  margin: 0px;
+  margin: auto;
+  margin-right: 0px;
+  color: gray;
+}

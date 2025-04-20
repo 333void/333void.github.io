@@ -47,7 +47,7 @@ class timeFormatter {
     this.offset = Math.floor(this.time.getTimezoneOffset()/60);
     this.fromGMT = Math.abs(this.offset);
     this.offsetDirection = this.offset > 0 ? '-' : '+';
-    this.offset2Digits = this.offsetDirection + (this.fromGMT < 9 ? '0' : '') + this.fromGMT;
+    this.offset2Digits = this.offsetDirection + (this.fromGMT < 10 ? '0' : '') + this.fromGMT;
   }
 
   get year() {
@@ -80,11 +80,49 @@ class timeFormatter {
 }
 
 /***
+**** HTML INTERFACE
+***/
+
+function activateButtons(doc) {
+  // activate all buttons
+  // enable submit button (saves item on parsed xml so it keeps adding new itemover and over??)
+  document.getElementById('add').addEventListener('click', function (e) {
+    e.preventDefault();
+    const now = new timeFormatter;
+    let item = {
+      time: now,
+      // how many minutes a feed should be cached in certain RSS aggregators before polling the original web server feed again (default set to 60 minutes)
+      ttl: 60,
+      link: config.site + '',
+      title: document.getElementById('title').value,
+      desc: formDesc(),
+      guid: `${config.site}${config.subdir}/${now.year}/${now.month + 1}/${now.date}`
+    }
+    formRSS(doc, item, now);
+  });
+  document.getElementById('show').addEventListener('click', function (e) {
+    document.getElementById('output').textContent = enSerio(doc);
+  });
+  document.getElementById('download').addEventListener('click', function (e) {
+    exportRSS(doc);
+  });
+}
+
+function formDesc() {
+  let otter = '';
+  for (const element of document.getElementById('desc-con').querySelectorAll('textarea')) {
+    let tag = document.getElementById(element.id + '-tag').value;
+    otter += `<${tag}>${element.value}</${tag}>\n\t    `;
+  }
+  return otter
+}
+
+/***
 **** RSS EDITOR
 ***/
 
 var client = new XMLHttpRequest();
-client.open('GET', 'index.xml');
+client.open('GET', config.rssFile);
 client.onreadystatechange = function() {
   // readyState 4 is for complete response
   if (client.readyState === 4) {
@@ -102,38 +140,14 @@ function parseRSS(text) {
   if (errorNode) {
     console.log("error while parsing");
   } else {
-    // activate all buttons
-    // enable submit button (saves item on parsed xml so it keeps adding new itemover and over??)
-    document.getElementById('add').addEventListener('click', function (e) {
-      e.preventDefault();
-      const now = new timeFormatter;
-      let item = {
-        time: now,
-        // how many minutes a feed should be cached in certain RSS aggregators before polling the original web server feed again (default set to 60 minutes)
-        ttl: 60,
-        link: config.site + '',
-        title: document.getElementById('title').value,
-        desc: formDesc(),
-        guid: `${config.site}${config.subdir}/${now.year}/${now.month + 1}/${now.date}`
-      }
-      formRSS(doc, item, now);
-    });
-    document.getElementById('download').addEventListener('click', function (e) {
-      exportRSS(doc);
-    });
+    activateButtons(doc);
   }
-}
-
-function formDesc() {
-  let otter = '';
-  for (const element of document.getElementById('desc-con').querySelectorAll('textarea')) {
-    otter += `<element.id>${element.value}</p>\n\t    `;
-  }
-  return otter
 }
 
 // create new RSS item element in DOM element form
 function bRSSItem(doc, data) {
+  console.log(data.desc)
+  
   return (
     new bElement(doc, {
       tag: 'item',
@@ -162,6 +176,8 @@ function bRSSItem(doc, data) {
           ],
         }).set(),
         '\n\t',
+
+
 
         new bElement(doc, {
           tag: 'pubDate',
@@ -213,7 +229,7 @@ function formRSS(doc, item) {
   latestItem.parentElement.insertBefore(bRSSItem(doc, item), latestItem);
   latestItem.parentElement.insertBefore(new bTextNode(doc, {string: '\n\n    '}).set(), latestItem);
 
-  console.log(enSerio(doc));
+  //console.log(enSerio(doc));
 }
 
 // turns DOM tree XML into a string

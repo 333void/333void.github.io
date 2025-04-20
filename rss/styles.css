@@ -1,0 +1,32 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+#text {
+  text-wrap: wrap;
+  font-size: 1em;
+}
+
+.desc-con {
+  display: flex;
+  flex-direction: row;
+}
+
+.e-con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.tag {
+  min-width: 25px;
+  flex: 0 0 0;
+}
+
+textarea {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  flex: 1 0 0;
+}
