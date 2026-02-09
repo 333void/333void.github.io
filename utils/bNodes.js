@@ -22,6 +22,16 @@ export class bNode {
   }
 }
 
+/*
+document.getElementById("").appendChild(new bSVGElement({
+    tag: 'div',
+    attributes: {
+      id: "",
+    },
+    innerHTML: "yolo",
+  }).set());
+*/
+
 export class bElement extends bNode {
   constructor(data) {
     super(data);

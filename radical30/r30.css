@@ -1,0 +1,176 @@
+:root {
+  --u1: 1;
+  --font-size: 3vw;
+  --key-size: 6vw;
+  --spacing: calc(var(--key-size) / 10);
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  :root {
+    --u1: 1px;
+    --font-size: calc(3 * 7.7);
+    --key-size: calc(6 * 7.7);
+  }  
+}
+
+html {
+  padding: calc(var(--spacing) * var(--u1) * 10);
+}
+
+body {
+  margin: 0px;
+}
+
+h2 {
+  color: lightgray
+}
+
+label {
+  font-family: 'Tahoma', 'sans-serif';
+  font-size: calc(var(--font-size) * var(--u1) * 0.75);
+}
+
+#kb-select {
+  margin-bottom: calc(var(--spacing) * var(--u1));
+  font-family: 'Tahoma', 'sans-serif';
+  font-size: calc(var(--font-size) * var(--u1) * 0.75);
+}
+
+#con-device {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 123px);
+}
+
+#con-display {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.con-text {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: calc(var(--spacing) * var(--u1));
+  font-size: 40px;
+  border: 1px solid blue;
+  justify-content: center;
+}
+
+.r30 {
+  stroke: white;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill-opacity: 0%
+}
+
+#text {
+  overflow: scroll;
+  width: 100%;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: calc(var(--font-size) * var(--u1) * 1.5);
+}
+
+#con-keyboards {
+  display: flex;
+  gap: calc(var(--spacing) * var(--u1) * 10);
+  flex-direction: row;
+  margin-bottom: auto;
+}
+
+.kb-side {
+  width: calc(50vw)
+}
+
+/*
+.kb {
+  
+} */
+
+.row {
+  display: flex;
+  flex-direction: row;
+  /* 
+  margin-bottom: calc(var(--spacing) * var(--u1));
+  gap: calc(var(--spacing) * var(--u1));
+  */
+}
+
+#row-0 {
+  justify-content: right;
+}
+
+.key {
+  flex: 1 0 0;
+  height: calc(var(--key-size) * var(--u1));
+  border-radius: 4px;
+  border: 1px solid #8f8f9d;
+  padding: 0px;
+  text-align: center;
+  text-wrap: nowrap;
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+  font-size: calc(var(--font-size) * var(--u1));
+}
+
+.key:disabled {
+  border-color: #6e6e70;
+}
+
+.key.spacer {
+  opacity: 0;
+}
+
+#voice {
+  flex: .25 0 0;
+}
+
+#tab {
+  flex: 1.5 0 0;
+}
+
+#backslash {
+  flex: 1.5 0 0;
+}
+
+#caps-lock {
+  flex: 1.75 0 0;
+}
+
+#enter {
+  flex: 2.25 0 0;
+}
+
+#key-1-3 {
+  flex: 3 0 0;
+}
+
+#key-2-3 {
+  flex: 3 0 0;
+}
+
+#key-3-3 {
+  flex: 2 0 0;
+}
+
+#key-5-3 {
+  flex: 3 0 0;
+}
+
+#key-6-3 {
+  flex: 3 0 0;
+}
+
+#key-7-3 {
+  flex: 3 0 0;
+}

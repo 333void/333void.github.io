@@ -5,19 +5,18 @@
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="notation.css">
     <!-- ENGINES -->
-    <script src="https://unpkg.com/tone"></script>
+    <script src="https://unpkg.com/tone@15.1.22/build/Tone.js"></script>
     <script type="module" src="src/main.js"></script>
   </head>
   <body>
     <h1>ru5o</h1>
     <h2>digital & handwritten music notation</h2>
-    <label for="input">input</label>
-    <input type="text" name="input" id="plaintext">
-    <svg xmlns="http://www.w3.org/2000/svg" height="500" id="canvas">
+    <label for="input">plaintext</label>
+    <input type="text" name="input" id="plaintext" style="font-family: monospace;">
+    <!--<label for="canvas">spacious notation</label>
+    <svg xmlns="http://www.w3.org/2000/svg" height="500" id="canvas">-->
     </svg>
-    <label for="input">output</label>
-    <input type="text" name="output" id="plaintext">
-    <input type="button" name="play" id="playButton" value="useless button">
+    <input type="button" name="play" id="playButton" value="play">
     <br><br><br>
     <p>ru5o is a new music notation based on the work of Jean-Jacques Rousseau. It is made to be easy to write both digitally and by hand.</p>
     <br>
@@ -37,33 +36,33 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="col">key</th>
-          <td scope="col">k <i>(optional)</i></td>
-          <td scope="row">C</td>
-          <td scope="row">Dm, F, C#Phr</td>
+          <th scope="col">key / mode</th>
+          <td scope="col">k</td>
+          <td scope="row">C / Major</td>
+          <td scope="row">Dm, F, C#Phr, Minor</td>
         </tr>
         <tr>
           <th scope="col">root note <i>(soflège)</i></th>
-          <td scope="col">numeral</td>
-          <td scope="row">1=C<br><i>(A440)</i></td>
-          <td scope="row">6=F, 3=/A, 1=200hz </td>
+          <td scope="col">any numeral</td>
+          <td scope="row">1=C</td>
+          <td scope="row">6=F, 3=A#, 1=Bb</td>
         </tr>
         <tr>
-          <th scope="col">mode</th>
-          <td scope="col">m</td>
-          <td scope="row">Major</td>
-          <td scope="row">Minor, Lydian, Dorian</td>
+          <th scope="col">octave</th>
+          <td scope="row">o</td>
+          <td scope="row">4<br></td>
+          <td scope="row">2, 5, 1, 7</td>
         </tr>
         <tr>
           <th scope="col">time signature</th>
-          <td scope="col">t <i>(optional)</i></td>
+          <td scope="col">t</td>
           <td scope="row">4/4</td>
           <td scope="row">6/4, 13/16</td>
         </tr>
         <tr>
           <th scope="col">tempo</th>
-          <td scope="row">q <i>(optional)</i><br>fraction</td>
-          <td scope="row">120</td>
+          <td scope="row">q <i>(1/4)</i> / note value <br><i>(1/2, 1/8, 6/8, etc.)</i></td>
+          <td scope="row">q=120</td>
           <td scope="row">80, 200, 1/8=90</td>
         </tr>
         <tr>
@@ -73,6 +72,12 @@
           <td scope="row">6edo, 19mean, just</td>
         </tr>
     </table>
+
+    <br><br>
+    mary had a little lamb
+    <p style="font-family: monospace;">
+    [1=C] | 3 2 1 2 | 3 3 3+ | 2 2 2+ | 3 5 5+ | 3 2 1 2 | 3 3 3 3 | 2 2 3 2 | 1* |
+    </p>
     <!-- <table>
       <caption>
         notes
