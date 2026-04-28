@@ -10,7 +10,7 @@
   :root {
     --u1: 1px;
     --font-size: calc(3 * 7.7);
-    --key-size: calc(6 * 7.7);
+    --key-size: calc(6 * 12);
   }  
 }
 
@@ -121,6 +121,11 @@ label {
   appearance: none;
   touch-action: manipulation;
   font-size: calc(var(--font-size) * var(--u1));
+}
+
+.small {
+  color: gray;
+  font-size: calc(0.5 * var(--font-size) * var(--u1));
 }
 
 .key:disabled {

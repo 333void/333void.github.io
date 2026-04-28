@@ -37,7 +37,7 @@ function changeKeys(layout, keyCase) {
           // update key to value in table
           default:
             key.disabled = false;
-            key.textContent = val;
+            key.innerHTML = `${val[0]} <br>  <div class="small">${val[1]}<div>`;
         }
       } else {
         console.error(`attempting to update keys not existing on keyboard: key-${r + 1}-${k + 1}`)

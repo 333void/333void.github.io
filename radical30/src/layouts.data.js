@@ -1,13 +1,13 @@
 export const layouts = {
   consonants: [
     [ // row 1, nasal
-      ['blanc', 'm'],
-      ['blanc', 'ɱ'],
-      ['blanc', 'n'],
-      ['blanc', 'ɳ'],
-      ['blanc', 'ɲ'],
-      ['blanc', 'ŋ'],
-      ['blanc', 'ɴ'],
+      [['m\u0325', 'lp1m1-n_v'], ['m', 'lp1m1-n']],
+      [['ɱ\u030a', 'lp2m1-n_v'], ['ɱ', 'lp2m1-n']],
+      [['n\u0325', 'cm1-n_v'], ['n', 'cm1-n']],
+      [['ɳ\u030a', 'cp2p3m1-n_v'], ['ɳ', 'cp2p3m1-n']],
+      [['ɲ\u030a', 'dp1m1-n_v'], ['ɲ', 'dp1m1-n']],
+      [['ŋ\u030a', 'dp2m1-n_v'], ['ŋ', 'dp2m1-n']],
+      [['ɴ\u030a', 'dp3m1-n_v'], ['ɴ', 'dp3m1-n']],
       'disabled',
       'disabled',
     ],

@@ -109,7 +109,7 @@ function line(box, rad, xy = 'xy') {
 function polyline(box, ...polyOrder) {
   let points = [];
 
-  if (polyOrder > 1) {
+  if (polyOrder.length > 1) {
     for (const radbit of polyOrder) {
       //console.log('c', radbit[0])
       // add x,y points in order specified by polyPocket function
@@ -210,12 +210,12 @@ function polyPocket(rad, box) {
   // start with main radbit (a, l, etc.)
   let polyOrder = [[rads[rad[0]], 1, 0]];
 
-  console.log(rad.filter((r) => r[1] == 2).length == (rad.length - 1))
+  //console.log(rad.filter((r) => r[1] == 2).length == (rad.length - 1))
 
   let soFar = '';
   for (const piece of rad) {
     soFar += piece;
-    console.log('cool', soFar.match(/3/g) ? [0, 1, 0] : [1, 0])
+    //console.log('cool', soFar.match(/3/g) ? [0, 1, 0] : [1, 0])
     switch (piece[1]) {
       case '1':
         // push polyline points in correct order, 1 manner/place is pushed to end of polyline
@@ -244,7 +244,10 @@ function polyPocket(rad, box) {
     }
   }
 
-  shapes.push(polyline(box, ...polyOrder));
+  console.log('PO', polyOrder[0][0])
+
+  // if only m/p 2 send to shapeSwitch
+  polyOrder.length > 1 ? shapes.push(polyline(box, ...polyOrder)) : shapes.push(shapeSwitch(rad[0], box));
 
   return shapes;
 }
@@ -263,14 +266,14 @@ class Box {
 
   resize(x1, y1, x2, y2) {
     // offset box by x1 & y1 ammount
-    this.ox = this.m + (this.dx * x1);
-    this.oy = this.m + (this.dy * y1);
+    this.ox = this.m + (this.dx * x1) + (this.m / 2 * Math.ceil(x1))
+    this.oy = this.m + (this.dy * y1) + (this.m / 2 * Math.ceil(y1))
 
-    console.log((this.dx))
+    console.log(x2 - 1)
 
     // shorten dimensions of box by offset & by x2,y2
-    this.dx -= (this.dx / (1 / x1)) + (this.dx * (1 - x2));
-    this.dy -= (this.dy / (1 / y1)) + (this.dy * (1 - y2));
+    this.dx -= (this.dx / (1 / x1)) + (this.dx * (1 - x2)) + (this.m / 2 * Math.abs(Math.ceil(x1))) + (this.m / 2 * Math.ceil(Math.abs(x2 - 1)))
+    this.dy -= (this.dy / (1 / y1)) + (this.dy * (1 - y2)) + (this.m / 2 * Math.abs(Math.ceil(y1))) + (this.m / 2 * Math.ceil(Math.abs(y2 - 1)))
 
     /*
       this.m + (this.dx * x1) + (this.m / 2 * Math.ceil(x1)), 
@@ -283,12 +286,80 @@ class Box {
 
 // create character
 function char(text, dmsn) {
+  let cRads = decode(text);
   let shapes = [];
-  let rads = decode(text);
+  let rAsp = []; // rad aspect
+
+  // get preferred aspect of each radical before arranging box sizes for each radical in character
+  for (const rad of cRads) {
+    // get aspect where decoded radical in cRads is an array or string
+    rAsp.push(rads[rad] ? rads[rad].aspect : rads[rad[0]].aspect);
+  }
   
   //let i = 0;
-  for (const rad of rads) {
-      let box = new Box(dmsn);
+
+  for (let i = 0; i < cRads.length; i++) {
+    let box = new Box(dmsn);
+
+    // sorted alphabetically
+    switch (rAsp.toString()) {
+      case 'horizontal,both':
+        switch(i) {
+          case 0: box.resize(0, 0, 1, 0.5); break;
+          case 1: box.resize(1/6, 0.5, 5/6, 1); break;
+        };
+        break;
+      case 'horizontal,horizontal':
+        switch(i) {
+          case 0: box.resize(0, 0, 1, 0.5); break;
+          case 1: box.resize(0, 0.5, 1, 1); break;
+        };
+        break;
+      case 'horizontal,vertical':
+        switch(i) {
+          case 0: box.resize(0, 0, 1, 1/3); break;
+          case 1: box.resize(1/6, 1/3, 5/6, 1); break;
+        };
+        break;
+      case 'horizontal,vertical,both':
+      case 'horizontal,both,both':
+      case 'horizontal,horizontal,both':
+        switch(i) {
+          case 0: box.resize(0, 0, 1, 0.5); break;
+          case 1: box.resize(0, 0.5, 0.5, 1); break;
+          case 2: box.resize(0.5, 0.5, 1, 1); break;
+        };
+        break;
+      case 'vertical,both':
+        switch(i) {
+          case 0: box.resize(0, 0, 1/3, 1); break;
+          case 1: box.resize(1/3, 1/6, 1, 5/6); break;
+        };
+        break;
+      case 'vertical,horizontal':
+        switch(i) {
+          case 0: box.resize(0, 0, 1/3, 1); break;
+          case 1: box.resize(1/3, 1/6, 1, 5/6); break;
+        };
+        break;
+      case 'vertical,vertical,both':
+      case 'vertical,vertical':
+        switch(i) {
+          case 0: box.resize(0, 0, 0.5, 1); break;
+          case 1: box.resize(0.5, 0.5, 1, 1); break;
+          case 2: break;
+        };
+        break;
+      case 'vertical,horizontal,both':
+      case 'vertical,both,both':
+        switch(i) {
+          case 0: box.resize(0, 0, 0.5, 1); break;
+          case 1: box.resize(0.5, 0, 1, 0.5); break;
+          case 2: box.resize(0.5, 0.5, 1, 1); break;
+        };
+        break;
+    }
+      
     /*if (rads.length > 1) {
       i += 1;
       switch (rads.length) {
@@ -304,14 +375,15 @@ function char(text, dmsn) {
     }*/
     // if multiple radicals
 
-    console.log('rad:', rad)
+    console.log('rad:', cRads[i])
 
     //box.resize(0, 0.5, 1, 1)
     
-    if (Array.isArray(rad)) {
-      shapes.push(...polyPocket(rad, box)) // ap1, lp3m1, etc.
+    // if array has a more complex rendering (needing to be combined into a polyline)
+    if (Array.isArray(cRads[i])) {
+      shapes.push(...polyPocket(cRads[i], box)) // ap1, lp3m1, etc.
     } else {
-      shapes.push(shapeSwitch(rad, box)); // l, a, o, etc.
+      shapes.push(shapeSwitch(cRads[i], box)); // l, a, o, etc.
     }
   }
 
@@ -335,7 +407,7 @@ let svg = new bSVGElement({
   },
 }).set();
 
-svg.append(...char("n", dmsn));
+svg.append(...char("am1", dmsn));
 
 // "s1-s2-s3-s4"
  

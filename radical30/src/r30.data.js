@@ -21,31 +21,6 @@ export const rads = {
       [1, 0.5]
     ]
   },
-  lm1: {
-    shape: 'line',
-    xy: [
-      [0, 0.5], 
-      [0, 1]
-    ]
-  },
-  lm2: {
-    shape: 'line',
-    xy: [
-      [0.5, 0.5], 
-      [0.5, 1]
-    ],
-    xy2: [
-      [0.5, 0.5], 
-      [0.5, 0.75]
-    ]
-  },
-  lm3: {
-    shape: 'line',
-    xy: [
-      [1, 0.5], 
-      [1, 1]
-    ]
-  },
   lp1: {
     shape: 'line',
     xy: [
@@ -69,6 +44,31 @@ export const rads = {
     xy: [
       [1, 0.5], 
       [1, 0]
+    ]
+  },
+  lm1: {
+    shape: 'line',
+    xy: [
+      [0, 0.5], 
+      [0, 1]
+    ]
+  },
+  lm2: {
+    shape: 'line',
+    xy: [
+      [0.5, 0.5], 
+      [0.5, 1]
+    ],
+    xy2: [
+      [0.5, 0.5], 
+      [0.5, 0.75]
+    ]
+  },
+  lm3: {
+    shape: 'line',
+    xy: [
+      [1, 0.5], 
+      [1, 1]
     ]
   },
 
@@ -134,13 +134,21 @@ export const rads = {
       [1, 0.5]
     ]
   },
-  // palatal
-  p: [
+
+  /*
+  //  DORSAL
+  */
+
+  d: [
     'line',
     [0, 0],
     [1, 1]
   ],
-  // throat
+  
+  /*
+  //  THROAT
+  */
+
   t: [
     'line',
     [0.5, 0],
@@ -151,11 +159,24 @@ export const rads = {
   //  ARTICULATION
   */
   o: {
+    shape: 'polyline',
+    aspect: 'both',
+    points: [
+      [0, 0],
+      [1, 0],
+      [1, 1],
+      [0, 1],
+      [0, 0]
+    ],
+  },
+  o1: {
     shape: 'circle',
+    aspect: 'both',
     data: [0.5, 0.5, 0.45],
   },
-  n: {
+  t: {
     shape: 'polyline',
+    aspect: 'both',
     points: [
       [0, 0.5],
       [0, 0],
@@ -167,4 +188,18 @@ export const rads = {
       [1, 0.5]
     ],
   },
+  n: {
+    shape: 'polyline',
+    aspect: 'both',
+    points: [
+      [0.5, 0],
+      [0, 0],
+      [0, 1],
+      [0.5, 1],
+      [0.5, 0],
+      [1, 0],
+      [1, 1],
+      [0.5, 1]
+    ],
+  }
 }
